@@ -1,96 +1,53 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>PAKU</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya</title>
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 0;
 
-<script src="js/p5.min.js"></script>
+        }
 
-<style>
-body{
-    margin:0;
-    background:black;
-    display:flex;
-    justify-content:center;
-}
-canvas{
-    image-rendering:pixelated;
-}
-</style>
+        .cont {
+            position: absolute;
+            text-align: center; 
+            padding: 0 30px;
+        }
+
+        /* Make the button like glass */
+        button {    
+            margin-top: 40px; padding: 10px 20px; border-radius: 35px; border: none; background-color: #ff4081; color: white; font-size: 1.2em; cursor: pointer; font-family: 'Poppins', sans-serif;
+            background: #ff4081;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            
+        }
+        /* glass btn hover */
+        button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-
 <body>
 
-<script>
-
-let img;
-let phrase = "I LOVE YOU KARYA ";
-let charIndex = 0;
-
-let startSize = 20;
-let endSize = 5;
-
-let startStep = 20;
-let endStep = 5;
-
-let duration = 5000;
-let startTime;
-
-function preload(){
-    img = loadImage("img/karya.jpg");
-}
-
-function setup(){
-    createCanvas(img.width, img.height);
-    img.loadPixels();
-
-    textFont("monospace");
-
-    startTime = millis();
-}
-
-function draw(){
-
-    background(0);
-
-    let elapsed = millis() - startTime;
-    let progress = constrain(elapsed / duration, 0, 1);
-
-    // interpolate size and step
-    let currentSize = lerp(startSize, endSize, progress);
-    let currentStep = lerp(startStep, endStep, progress);
-
-    textSize(currentSize);
-
-    charIndex = 0;
-
-    for(let y=0; y<img.height; y+=currentStep){
-        for(let x=0; x<img.width; x+=currentStep){
-
-            let index = (floor(x) + floor(y) * img.width) * 4;
-
-            let r = img.pixels[index];
-            let g = img.pixels[index+1];
-            let b = img.pixels[index+2];
-
-            fill(r,g,b);
-
-            let char = phrase.charAt(charIndex % phrase.length);
-
-            text(char,x,y);
-
-            charIndex++;
-        }
-    }
-
-    if(progress >= 1){
-        noLoop();
-    }
-}
-
-</script>
-
+    <!-- Create a background image with over about 90% darkness with a transparent overlay and a label I Love You, Love! and a description and a rounded button with 20 px margin top-->
+    <div style="position: relative; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+        <img src="/img/karya.jpg" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(13%);">
+        <div class="cont">
+            <h1 style="color: white; font-size: 2.5em; font-family: 'Poppins', sans-serif; font-weight: 800;">I Love You, <span style="color: #ff4081;">Lablab</span>!</h1>
+            <p style="color: rgb(139, 137, 137); font-size: 1em; font-family: 'Poppins', sans-serif; transform: translateY(-30px);">Every moment with you is special. I love you more than words can explain. Cge lang baya kag pangaway anga ka. 
+</p>
+           <a href="karya.html"><button id="glass" >Pislita ni waa ka</button></a>
+        </div>
+    
 </body>
 </html>
-```
