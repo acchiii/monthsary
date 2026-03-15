@@ -6,7 +6,7 @@
 <title>PAKU</title>
     <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/p5.min.js"></script>
 
 <style>
@@ -45,11 +45,12 @@ function preload(){
 }
 
 function setup(){
-    
     createCanvas(windowWidth, windowHeight);
-    img.loadPixels();
 
-    textFont("monospace");
+    img.resize(width, height); // scale image to screen
+
+    img.loadPixels();
+    textFont("Poppins");
 
     startTime = millis();
 }
@@ -82,7 +83,7 @@ function draw(){
 
             let char = phrase.charAt(charIndex % phrase.length);
 
-            text(char,x,y);
+           text(char,x,y);
 
             charIndex++;
         }
@@ -119,11 +120,9 @@ setTimeout(() => {
 
 
 // close modal when clicking outside the image
-modal.addEventListener("click", (e) => {
-    if(e.target === modal){
-        modal.style.display = "none";
-    }
-});
+function mousePressed(){
+    window.location = "index.html";
+}
 
 
 
