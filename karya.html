@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="js/p5.min.js"></script>
-
+ <script src="js/tsparticles.bundle.min.js"></script>
+  
 <style>
 body{
     margin:0;
@@ -19,6 +20,16 @@ body{
 }
 canvas{
     image-rendering:pixelated;
+    z-index: 2;
+}
+ #hearts-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+    pointer-events:none;
 }
 </style>
 </head>
@@ -93,9 +104,11 @@ function draw(){
         noLoop();
     }
 }
-// when the drawing clicked, reset the animation
+
 canvas.addEventListener("click", () => {
+    
     window.location = "index.html";
+
 });
 </script>
 
@@ -124,12 +137,49 @@ function mousePressed(){
     window.location = "index.html";
 }
 
-document.addEventListener("click", function(){
+
+document.addEventListener("click", (e) => {
     mousePressed();
 });
 
 
-
             </script>
+             <div id="hearts-bg"></div>
+
+    <script>
+tsParticles.load("hearts-bg", {
+    particles: {
+        number: {
+            value: 60
+        },
+        shape: {
+            type: "char",
+            character: {
+                value: "❤"
+            }
+        },
+        size: {
+            value: 10
+        },
+        color: {
+            value: "#000"
+        },
+        move: {
+            enable: true,
+            speed: 2,
+            direction: "top",
+            outModes: {
+                default: "out"
+            }
+        },
+        opacity: {
+            value: .6
+        }
+    },
+    background: {
+        color: "transparent"
+    }
+});
+</script>
 </body>
 </html>
