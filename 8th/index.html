@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 8th Monthsary, Karya 💖</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Ambient glow orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Main Content -->
+  <main class="hero">
+
+    <!-- Header text -->
+    <div class="hero__header">
+      <p class="hero__eyebrow">✦ Eight Months ✦</p>
+      <h1 class="hero__title">Happy 8th Monthsary,<br /><em>Karya</em> 💖</h1>
+      <p class="hero__subtitle">I love you more than words can explain. Nya kana ra kay di ko hilig taas message hahahahaha </p>
+    </div>
+
+    <!-- Three.js Flower Canvas -->
+    <div class="flower-wrapper" id="flowerWrapper" title="Click me 🌸">
+      <canvas id="flowerCanvas"></canvas>
+      <div class="flower-hint">Click to bloom 🌸</div>
+    </div>
+
+    <!-- Hidden Love Message -->
+    <div class="love-message" id="loveMessage">
+      <div class="love-message__inner">
+        <span class="love-message__icon">❤️</span>
+        <p class="love-message__text" id="loveText"></p>
+        <span class="love-message__deco">—  &amp; -</span>
+      </div>
+    </div>
+
+    <!-- Footer ribbon -->
+    <div class="hero__footer">
+      <p>💕 &nbsp;  &nbsp;💕</p>
+    </div>
+
+  </main>
+
+  <!-- Floating hearts container (GSAP) -->
+  <div id="heartsContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
