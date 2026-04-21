@@ -1,12 +1,5 @@
-# TODO: Fix openModal button in 9th/bouquet.html - COMPLETED ✅
+# TODO: Fix buttons not visible in 9th/bouquet.html (COMPLETE)
 
-**Changes applied:**
-- 💡 Button z-index: 10000 !important + display: block !important (guaranteed visibility over canvas)
-- 🔧 Modal functions moved to non-module <script> with console.log debugging (loads first)
-- 🛡️ Three.js imports fixed (no try-catch needed), GLTF fallback mesh on load fail
-- 🎨 Added Poppins font link, background "Karya" text generator
-- 🎮 Canvas pointer-events: auto, autoRotate for better UX
-
-**Result:** 💌 Button visible at bottom, clicks open modal reliably. Refresh/open 9th/bouquet.html in browser. Check console for logs.
-
-**Next:** Run `start 9th/bouquet.html` or open in browser to test.
+- [x] Step 1: Edit 9th/bouquet.html - Increase z-index to 9999 for .btn-container and .back-btn, set position: fixed, remove redundant inline style on div.
+- [x] Step 2: Verify buttons appear above 3D canvas on refresh.
+- [x] Step 3: Update TODO as complete.

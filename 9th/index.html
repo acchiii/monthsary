@@ -1,206 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Karya ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      min-height: 100vh;
-      background: url(bg.png);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Dancing Script', cursive;
-      overflow: hidden;
-      position: relative;
-    }
-    .bg-text {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .bg-text span {
-      position: absolute;
-      font-family: 'Pinyon Script', cursive;
-      font-size: 15vw;
-      color: rgba(255, 107, 157, 0.06);
-      white-space: nowrap;
-      transform: rotate(-15deg);
-    }
-    .content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-    .gift-container {
-      display: inline-block;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    .gift-container:hover { transform: scale(1.08); }
-    .gift-image {
-      width: 80px;
-      animation: bounce 2s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    .gift-label {
-      font-size: 1.8rem;
-      color: #ffb6c1;
-      margin-top: 10px;
-      text-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
-    }
-    .message-btn {
-      margin-top: 30px;
-      padding: 12px 35px;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(135deg, #ff6b9d 0%, #ff8a9b 100%);
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
-      transition: all 0.3s ease;
-    }
-    .message-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.6);
-    }
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-overlay.active { display: flex; }
-    .modal {
-      background: #f5f0e6;
-      max-width: 550px;
-      width: 100%;
-      padding: 35px;
-      border-radius: 5px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(139, 69, 19, 0.08);
-      position: relative;
-    }
-    .modal::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, #8b4513, #d4a574, #8b4513);
-    }
-    .modal-close {
-      position: absolute;
-      top: 12px; right: 18px;
-      font-size: 26px;
-      color: #8b4513;
-      cursor: pointer;
-    }
-    .modal-title {
-      font-size: 2.2rem;
-      color: #8b4513;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .modal-date {
-      text-align: center;
-      color: #a0522d;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .modal-content {
-      font-size: 1.4rem;
-      color: #5d4037;
-      line-height: 1.7;
-      text-align: center;
-    }
-    .modal-content p { margin-bottom: 12px; }
-    .tape {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70px;
-      height: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%);
-      border-radius: 2px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 9th Monthsary, Karya 💖</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+  .gift-label {
+    font-family: 'Dancing Script', cursive;
+  }
+</style>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-text" id="bgText"></div>
 
-  <div class="content">
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Ambient glow orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Main Content -->
+  <main class="hero">
+
+    <!-- Header text -->
+    <div class="hero__header">
+      <p class="hero__eyebrow">✦ 9 Months ✦</p>
+      <h1 class="hero__title">Happy 9th Monthsary,<br /><em>Karya</em> 💖</h1>
+      <!-- <p class="hero__subtitle">I love you more than words can explain. Nya kana ra kay di ko hilig taas message hahahahaha </p> -->
+    </div>
+
+    <!-- Three.js Flower Canvas -->
+    <div class="flower-wrapper" id="flowerWrapper" title="Click me 🌸" style="display: none;">
+      <canvas id="flowerCanvas"></canvas>
+      <div class="flower-hint">Click to bloom 🌸</div>
+    </div>
+
+    <!-- Hidden Love Message -->
+    <div class="love-message" id="loveMessage" style="display: none;">
+      <div class="love-message__inner">
+        <span class="love-message__icon">❤️</span>
+        <p class="love-message__text" id="loveText"></p>
+        <span class="love-message__deco">—  &amp; -</span>
+      </div>
+    </div>
+
+    <div class="content">
     <a href="bouquet.html" class="gift-container">
       <img src="gift.png" alt="Gift" class="gift-image">
-      <div class="gift-label" style="color: rgb(248, 238, 238);">A Gift from Acchiii</div>
+      <div class="gift-label" style="color: rgb(4, 2, 2);">A Belated Gift from Acchiii</div>
     </a>
 
     <!-- <p>Click to open.</p> -->
     <!-- <button class="message-btn" onclick="openModal()">💌 Read My Message</button> -->
   </div>
 
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-    <div class="modal" onclick="event.stopPropagation()">
-      <div class="tape"></div>
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <h2 class="modal-title">Happy 9th Monthsary 💕</h2>
-      <p class="modal-date">April 2026</p>
-      <div class="modal-content">
-        <p>My Karya,</p>
-        <p>Nine months of love, laughter, and countless memories together. Every single day with you has been a blessing.</p>
-        <p>Thank you for being my rock, my smile, and my everything. I love you more than words can express! 💕</p>
-        <p>Here's to many more months together! 🎉</p>
-        <p>— From your Acchiii ❤️</p>
-      </div>
+    <!-- Footer ribbon -->
+    <div class="hero__footer">
+      <!-- <p>💕 &nbsp;  &nbsp;💕</p> -->
     </div>
-  </div>
 
-  <script>
-    function createRepeatedText() {
-      const container = document.getElementById('bgText');
-      const cols = Math.ceil(window.innerWidth / 350) + 1;
-      const rows = Math.ceil(window.innerHeight / 250) + 1;
-      
-      for (let row = -1; row < rows; row++) {
-        for (let col = -1; col < cols; col++) {
-          const span = document.createElement('span');
-          span.textContent = 'Karya';
-          span.style.left = (col * 350 + (row % 2) * 175) + 'px';
-          span.style.top = (row * 250) + 'px';
-          container.appendChild(span);
-        }
-      }
-    }
+  </main>
 
-    function openModal() {
-      document.getElementById('modalOverlay').classList.add('active');
-    }
-    function closeModal(e) {
-      if (e && e.target !== e.currentTarget) return;
-      document.getElementById('modalOverlay').classList.remove('active');
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-    
-    createRepeatedText();
-  </script>
+  <!-- Floating hearts container (GSAP) -->
+  <div id="heartsContainer"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
