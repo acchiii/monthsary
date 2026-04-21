@@ -178,7 +178,7 @@
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffb3ce);
     // change the bg into image
-    // scene.background = new THREE.TextureLoader().load('bg.png');
+    scene.background = new THREE.TextureLoader().load('bg.png');
 
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
     camera.position.set(0, 2, 5);
