@@ -9,7 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       overflow: hidden; 
-      background: #ffc0cb;
+      background: url('bg.jpg') no-repeat center center fixed;
       position: relative;
     }
     .bg-text {
@@ -140,7 +140,7 @@
   <div class="bg-text" id="bgText"></div>
   <!-- <div id="label">For Karya ❤️</div> -->
 
-  <div class="btn-container">
+  <div class="btn-container" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);">
     <!-- <a href="index.html" class="back-btn">← Back</a> -->
     <button class="back-btn" onclick="openModal()">💌</button>
   </div>
@@ -176,6 +176,8 @@
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xffc0cb);
+    // change the bg into image
+    scene.background = new THREE.TextureLoader().load('bg.png');
 
     const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
     camera.position.set(0, 2, 5);
@@ -248,7 +250,16 @@
       if (e && e.target !== e.currentTarget) return;
       document.getElementById('modalOverlay').classList.remove('active');
     };
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') window.closeModal(); });
+
+    document.addEventListener('keydown', e => { 
+        
+        if (e.key === 'Escape') window.closeModal(); 
+});
+
+// open modal
+document.addEventListener('click', e => { 
+    if (e.key === 'Enter') window.openModal();
+});
   </script>
 
   
